@@ -1,0 +1,13 @@
+.cover {
+    background-image: url('../assets/4d611d3c90001bf2fd13523e0cde169c.jpg');
+    background-size: cover;
+    background-color: black;
+    background-blend-mode: darken;
+    opacity: 1;
+    -webkit-filter: brightness(90%); /* Safari 6.0 - 9.0 */
+  filter: brightness(90%);
+  }
+
+ h3{
+   padding-bottom:20px;
+ }

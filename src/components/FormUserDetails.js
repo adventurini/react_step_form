@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import NavBar from './NavBar';
+import {Input, Jumbotron} from 'reactstrap';
+import Places from './Places';
+import './formuserdetails.css'
 
 export class FormUserDetails extends Component {
   continue = e => {
@@ -13,38 +13,14 @@ export class FormUserDetails extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <AppBar title="Enter User Details" />
-          <TextField
-            hintText="Enter Your First Name"
-            floatingLabelText="First Name"
-            onChange={handleChange('firstName')}
-            defaultValue={values.firstName}
-          />
-          <br />
-          <TextField
-            hintText="Enter Your Last Name"
-            floatingLabelText="Last Name"
-            onChange={handleChange('lastName')}
-            defaultValue={values.lastName}
-          />
-          <br />
-          <TextField
-            hintText="Enter Your Email"
-            floatingLabelText="Email"
-            onChange={handleChange('email')}
-            defaultValue={values.email}
-          />
-          <br />
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
-        </React.Fragment>
-      </MuiThemeProvider>
+      <div>
+      <NavBar />
+      <Jumbotron className="cover">
+        <h1>MyHouse</h1>
+        <h2>Home valuation precision</h2>
+          <Places onChange={handleChange} />
+      </Jumbotron>
+      </div>
     );
   }
 }
